@@ -8,8 +8,8 @@
 
 const getPokemonById = require('./foundations/06-promise');
 
-getPokemonById(10)
-    .then( name => console.log(name) )
+getPokemonById(39)
+    .then( name => console.log( {name}) )
     .catch( err => console.log( 'Pokemon no existe', err ) )
     .finally( () => console.log('done!!') );
 
