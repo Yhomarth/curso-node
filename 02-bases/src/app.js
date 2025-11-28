@@ -1,11 +1,21 @@
 
-const { getAge, getUUID } = require('./plugins');
+// const { getAge, getUUID } = require('./plugins');
 
 // const { emailTemplate } = require('./foundations/01-template');
 // require('./foundations/02-destructuring');
 // const { getUserById } = require('./foundations/03-callbacks');
 // const { getUserById } = require('./foundations/04-arrow');
 
+const getPokemonById = require('./foundations/06-promise');
+
+getPokemonById(10)
+    .then( name => console.log(name) )
+    .catch( err => console.log( 'Pokemon no existe', err ) )
+    .finally( () => console.log('done!!') );
+
+
+// ! referencia al patrón factory
+/* 
 const { buildMakePerson }  =require('./foundations/05-factory');
 
 const makeAPerson = buildMakePerson( getUUID, getAge );
@@ -19,4 +29,4 @@ const jhon = makeAPerson(obj);
 
 console.log(jhon);
 
-
+*/
