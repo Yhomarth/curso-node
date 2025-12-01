@@ -19,6 +19,7 @@ getPokemonById(39)
 const  { buildLogger }  = require('./plugins');
 const loger = buildLogger('app.js');
 loger.log('mensaje de prueba');
+loger.error('Esto es un error de prueba');
 
 
 // ! referencia al patrón factory
