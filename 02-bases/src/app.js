@@ -6,12 +6,19 @@
 // const { getUserById } = require('./foundations/03-callbacks');
 // const { getUserById } = require('./foundations/04-arrow');
 
+/*
 const getPokemonById = require('./foundations/06-promise');
+
 
 getPokemonById(39)
     .then( name => console.log( {name}) )
     .catch( err => console.log( 'Pokemon no existe', err ) )
     .finally( () => console.log('done!!') );
+*/
+
+const  { buildLogger }  = require('./plugins');
+const loger = buildLogger('app.js');
+loger.log('mensaje de prueba');
 
 
 // ! referencia al patrón factory

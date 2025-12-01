@@ -11,5 +11,5 @@ const httpClientPlugin = {
 
 
 module.exports = {
-    http : httpClientPlugin
+    httpClient : httpClientPlugin
 }
