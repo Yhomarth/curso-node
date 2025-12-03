@@ -14,10 +14,11 @@ export function getUserById(id : number , callback : (err ?: string, user ?: Use
     const user = users.find(  (user : User) => user.id === id); 
 
     if(!user){
-        callback(`User with id ${id} not found`);
+       return callback(`User with id ${id} not found`);
+        
     }
 
-    callback(undefined, user);
+    return callback(undefined, user);
 
 }
 
