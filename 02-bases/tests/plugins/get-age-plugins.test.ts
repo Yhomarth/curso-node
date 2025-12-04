@@ -1,4 +1,4 @@
-import { describe, test, expect } from '@jest/globals';
+import { describe, test, expect, jest } from '@jest/globals';
 
 import { getAge } from '../../src/plugins/get-age-plugin';
 
@@ -36,6 +36,20 @@ describe('plugins / get-age-plugin', () => {
 
 
     });
+
+    test('getAge return zero year', () => {
+        // arrange
+        const spy = jest.spyOn(Date.prototype, 'getFullYear').mockReturnValue(2024);
+        const birthDate = '2024-05-15';
+
+        // act
+        const age = getAge(birthDate);
+
+        // assert
+        expect(age).toBe(0);
+
+        spy.mockRestore();
+    })
 
     
 });
