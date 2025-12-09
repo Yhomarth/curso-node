@@ -2,7 +2,7 @@ import winston, {format}  from 'winston'
 const { combine, timestamp, json } = format; 
 
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
   level: 'info',
   format: combine(
     timestamp(),
@@ -23,7 +23,8 @@ export const  buildLogger = (service : string) =>{
 
     return {
         log : (message : string) => {
-            logger.info('info', { message, service} )
+         
+            logger.log('info', { message, service} )
         },
 
         error : (message : string) => {
