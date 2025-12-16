@@ -1,3 +1,4 @@
+ import { displayMultiplicationTable } from './multiplication-table';
 
-const mensaje = 'Hola Mundo';
-console.log(mensaje);
+
+ displayMultiplicationTable(5, 10);
