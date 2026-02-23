@@ -20,4 +20,10 @@ export const yarg = yargs(process.argv)
     default: false,
     describe: 'Show the multiplication table in console'
 })
+.check((argv, options) => {
+
+    if (argv.b < 1) throw new Error('The base must be greater than 0');
+
+    return true;
+})
 .parseSync();
