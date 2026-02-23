@@ -1,4 +1,5 @@
 import { yarg } from './config/plugins/args.plugin';
+import { displayMultiplicationTable } from './multiplication-table';
 
 (async ()=> {
     await main();
@@ -7,7 +8,13 @@ import { yarg } from './config/plugins/args.plugin';
 })();
 
 async function main() {
-     console.log(yarg);
+     
+     if (yarg.show) {
+
+        const { base, limit } = yarg;
+
+         displayMultiplicationTable(base as number, limit as number);
+     }
 }
 
 
