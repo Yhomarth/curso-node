@@ -1,4 +1,13 @@
- import { displayMultiplicationTable } from './multiplication-table';
+import { yarg } from './config/plugins/args.plugin';
+
+(async ()=> {
+    await main();
+    
+
+})();
+
+async function main() {
+    
+}
 
 
- displayMultiplicationTable(5, 10);

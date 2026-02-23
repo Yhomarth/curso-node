@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/app.ts",
+    "dev": "ts-node src/app.ts -b 5 -l 10",
     "dev:nodemon": "nodemon",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/app.js"
@@ -16,9 +15,13 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^25.0.2",
+    "@types/yargs": "^17.0.35",
     "nodemon": "^3.1.11",
     "rimraf": "^6.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
   }
 }
