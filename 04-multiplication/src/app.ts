@@ -1,5 +1,5 @@
 import { yarg } from './config/plugins/args.plugin';
-import { displayMultiplicationTable } from './multiplication-table';
+import { ServerApp } from './presentation/server-app';
 
 (async ()=> {
     await main();
@@ -8,13 +8,11 @@ import { displayMultiplicationTable } from './multiplication-table';
 })();
 
 async function main() {
+
+    const { b: base, l: limit, s: showTable, n: fileName, d: fileDestination } = yarg;
      
-     if (yarg.show) {
+    ServerApp.run({ base, limit, showTable, fileName, fileDestination });
 
-        const { base, limit } = yarg;
-
-         displayMultiplicationTable(base as number, limit as number);
-     }
 }
 
 

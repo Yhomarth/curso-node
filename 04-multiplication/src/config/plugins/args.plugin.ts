@@ -1,4 +1,4 @@
-import yargs from 'yargs';
+import yargs, { alias } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 export const yarg = yargs(process.argv)
@@ -19,6 +19,24 @@ export const yarg = yargs(process.argv)
     type: 'boolean',
     default: false,
     describe: 'Show the multiplication table in console'
+})
+.options('n',{
+    alias: 'name',
+    type: 'string',
+    default: 'multiplication-table',
+    describe: 'Name of the output file'
+})
+.options('d',{
+    alias: 'destination',
+    type: 'string',
+    default: 'outputs',
+    describe: 'Destination folder for the output file'
+})
+.option('f',{
+    alias: 'format',
+    type: 'string',
+    default: 'txt',
+    describe: 'Format of the output file'
 })
 .check((argv, options) => {
 
